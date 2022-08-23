@@ -49,10 +49,13 @@ public class StringConcepts {
 		System.out.println(name3);
 		int len=name.length();
 		System.out.println(len);
-		System.out.println(name.indexOf(4));
+		System.out.println(name.indexOf('p'));
+		System.out.println(name.indexOf('a'));
+		System.out.println(name.lastIndexOf('a'));
+		String name4=String.join("-","Krishna","priya");
 
-
-
+		System.out.println(name4);
+		System.out.println(name4.isEmpty()); //isEmpty()
 		
 		
 		
