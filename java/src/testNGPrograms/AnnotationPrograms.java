@@ -14,10 +14,10 @@ import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
 public class AnnotationPrograms {
-	public static WebDriver driver;
+	public  WebDriver driver;
 
 
-	@Test
+	@Test(priority=1)
 	  public void valid() {
 		driver.get("http://www.brm.tremplintech.in/web_pages/login.aspx");
 
@@ -27,7 +27,7 @@ public class AnnotationPrograms {
 
 		driver.findElement(By.xpath("//a[@id='LinkButton1']")).click();
 	  }
-	@Test
+	@Test(priority=2)
 	  public void invalid() {
 		driver.get("http://www.brm.tremplintech.in/web_pages/login.aspx");
 
@@ -36,6 +36,28 @@ public class AnnotationPrograms {
 		driver.findElement(By.xpath("//input[@id='Button3']")).click();
 
 		driver.switchTo().alert().accept();	  }
+	@Test(priority=3)
+	  public void valid1() {
+		driver.get("http://www.brm.tremplintech.in/web_pages/login.aspx");
+
+		driver.findElement(By.id("txt_unam")).sendKeys("sylix");
+		driver.findElement(By.xpath("//input[@id='txt_pass']")).sendKeys("admin");
+		driver.findElement(By.xpath("//input[@id='Button3']")).click();
+
+		driver.findElement(By.xpath("//a[@id='LinkButton1']")).click();
+	  }
+	@Test(priority=4)
+	  public void valid2() {
+		driver.get("http://www.brm.tremplintech.in/web_pages/login.aspx");
+
+		driver.findElement(By.id("txt_unam")).sendKeys("sylix");
+		driver.findElement(By.xpath("//input[@id='txt_pass']")).sendKeys("admin");
+		driver.findElement(By.xpath("//input[@id='Button3']")).click();
+
+		driver.findElement(By.xpath("//a[@id='LinkButton1']")).click();
+	  }
+
+
 
 	  @BeforeMethod
 	  public void beforeMethod() {
@@ -83,7 +105,7 @@ public class AnnotationPrograms {
 	  public void afterSuite() {
 		  System.out.println("aftersuit");
 
-driver.quit();
+//driver.quit();
 	  }
 
 		
